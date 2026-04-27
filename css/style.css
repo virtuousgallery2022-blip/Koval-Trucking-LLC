@@ -35,7 +35,7 @@ a:hover {
   opacity: 0.7;
 }
 
-/* Navigation */
+/* ─── Navigation ─── */
 nav {
   position: fixed;
   top: 0;
@@ -73,7 +73,6 @@ nav {
 .nav-links a {
   font-size: 0.85rem;
   font-weight: 400;
-  letter-spacing: 0px;
   color: var(--text-color);
 }
 
@@ -89,7 +88,7 @@ nav {
   font-size: 1.5rem;
 }
 
-/* Hero Section */
+/* ─── Hero Section ─── */
 .hero {
   height: 100vh;
   display: flex;
@@ -101,8 +100,6 @@ nav {
   position: relative;
   overflow: hidden;
 }
-
-
 
 .hero h1 {
   font-size: 4.5rem;
@@ -129,6 +126,7 @@ nav {
   opacity: 0;
 }
 
+/* ─── Buttons ─── */
 .btn {
   padding: 14px 32px;
   border-radius: 50px;
@@ -164,7 +162,7 @@ nav {
   color: #ffffff;
 }
 
-/* Sections */
+/* ─── Sections ─── */
 section {
   padding: 6rem 5%;
   max-width: 1200px;
@@ -189,7 +187,7 @@ section {
   margin-right: auto;
 }
 
-/* Grid Layouts */
+/* ─── Grids ─── */
 .grid {
   display: grid;
   gap: 2rem;
@@ -198,7 +196,7 @@ section {
 .grid-2 { grid-template-columns: 1fr 1fr; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-/* Cards/Features */
+/* ─── Feature Cards ─── */
 .feature-card {
   background: #ffffff;
   border: 1px solid var(--border-color);
@@ -222,7 +220,7 @@ section {
   line-height: 1.5;
 }
 
-/* Creative Footer */
+/* ─── Footer ─── */
 .creative-footer {
   background: #f5f5f7;
   border-top: 1px solid var(--border-color);
@@ -275,7 +273,7 @@ section {
   margin-left: 1rem;
 }
 
-/* Forms */
+/* ─── Forms ─── */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -308,7 +306,7 @@ section {
   border-color: var(--accent);
 }
 
-/* Image blocks */
+/* ─── Image Blocks ─── */
 .image-block {
   width: 100%;
   border-radius: 18px;
@@ -321,16 +319,10 @@ section {
   display: block;
 }
 
-/* Animations */
+/* ─── Animations ─── */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in {
@@ -344,58 +336,28 @@ section {
   transform: translateY(0);
 }
 
-/* Utilities */
+/* ─── Utilities ─── */
 .text-center { text-align: center; }
 .mb-2 { margin-bottom: 2rem; }
 .mb-4 { margin-bottom: 4rem; }
 .mt-4 { margin-top: 4rem; }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 3rem; }
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%; left: 0; width: 100%;
-    background: var(--nav-bg);
-    padding: 2rem;
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  .nav-links.show {
-    display: flex;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* Base Layout Utilities */
+/* ─── Split Layout ─── */
 .split-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 4rem;
 }
+
 .split-layout.reverse {
   direction: rtl;
 }
 .split-layout.reverse > * {
-  direction: ltr; /* keep inner content ltr */
+  direction: ltr;
 }
 
-@media (max-width: 768px) {
-  .split-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
+/* ─── Image Container ─── */
 .image-container {
   width: 100%;
   height: 100%;
@@ -408,4 +370,170 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — Tablet  (max 1024px)
+════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  /* Slightly reduce large inline font sizes */
+  .section-title { font-size: 2.4rem; }
+
+  .split-layout { gap: 2.5rem; }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — Mobile  (max 768px)
+════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* --- Nav --- */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0; width: 100%;
+    background: var(--nav-bg);
+    padding: 2rem;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    gap: 1rem;
+  }
+
+  .nav-links.show { display: flex; }
+  .menu-toggle { display: block; }
+
+  /* --- Grids → single column --- */
+  .grid-2,
+  .grid-3 { grid-template-columns: 1fr; }
+
+  /* --- Split layout → stacked --- */
+  .split-layout,
+  .split-layout.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 2rem;
+  }
+
+  /* --- Image containers --- */
+  .image-container { min-height: 260px; }
+
+  /* --- Sections: reduce padding --- */
+  section { padding: 4rem 5%; }
+
+  /* --- Section headings --- */
+  .section-title  { font-size: 2rem; letter-spacing: -0.5px; }
+  .section-subtitle { font-size: 1rem; margin-bottom: 2rem; }
+
+  /* --- Hero (inline-styled in index.html) --- */
+  .hero h1 { font-size: 2.6rem; letter-spacing: -1px; }
+
+  /* Override inline font-size on page <h1> headings */
+  h1 { font-size: 2.4rem !important; letter-spacing: -1px !important; }
+
+  /* Override large inline-styled section padding */
+  section[style*="padding: 10rem"],
+  header[style*="padding: 10rem"] {
+    padding-top: 7rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  section[style*="padding: 6rem"] {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* About page split-layout top section */
+  section[style*="max-width: 1300px"] {
+    padding: 7rem 5% 3rem !important;
+  }
+
+  /* Hero section index.html */
+  section[style*="10rem 5% 6rem"] {
+    padding: 7rem 5% 3rem !important;
+  }
+
+  /* Large inline h1/h2 font overrides */
+  h1[style*="font-size: 4"],
+  h2[style*="font-size: 3"],
+  h2[style*="font-size: 2"] {
+    font-size: 1.9rem !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Inline paragraph font sizes */
+  p[style*="font-size: 1.25rem"],
+  p[style*="font-size: 1.2rem"],
+  p[style*="font-size: 1.1rem"] {
+    font-size: 1rem !important;
+  }
+
+  /* Button group in hero */
+  div[style*="display: flex"][style*="gap: 1rem"],
+  div[style*="display: flex"][style*="gap: 15px"] {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn { width: 100%; max-width: 320px; }
+
+  /* Stat grid on about/home (2-col inline grid) */
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Repair page hero image */
+  .repair-hero {
+    height: 240px;
+    border-radius: 12px;
+  }
+
+  /* Contact / Carriers grid */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Feature card padding */
+  .feature-card { padding: 1.5rem; }
+
+  /* Footer */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links a { margin: 0 0.5rem; }
+
+  /* Services comparison mini-grid */
+  .grid[style*="gap: 1.5rem"] { gap: 1rem !important; }
+
+  /* Areas of operation text */
+  div[style*="font-size: 1.5rem"] {
+    font-size: 1rem !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Volvo truck hero image */
+  .image-container[style*="height: auto"] img {
+    border-radius: 10px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — Small phones  (max 480px)
+════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  h1 { font-size: 2rem !important; }
+  .section-title { font-size: 1.75rem; }
+
+  .btn { padding: 12px 24px; font-size: 0.95rem; }
+
+  nav { padding: 0.85rem 5%; }
+
+  .logo img { height: 28px; }
+
+  .feature-card { padding: 1.25rem; }
+
+  .footer-grid { grid-template-columns: 1fr; }
 }
