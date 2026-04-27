@@ -325,15 +325,124 @@ section {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pillPop {
+  0%   { opacity: 0; transform: scale(0.75) translateY(10px); }
+  70%  { transform: scale(1.06) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Scroll fade-in */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+              transform 0.75s cubic-bezier(0.22,1,0.36,1);
 }
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Staggered card animation */
+.card-animate {
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1),
+              transform 0.55s cubic-bezier(0.22,1,0.36,1);
+}
+
+.card-animate.card-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Nav shrink on scroll */
+nav {
+  transition: padding 0.35s ease, box-shadow 0.35s ease;
+}
+
+nav.nav-scrolled {
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+/* State pills */
+.state-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.55rem 1.25rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+  background: #fff;
+  opacity: 0;
+  transform: scale(0.75) translateY(10px);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  cursor: default;
+}
+
+.pill:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.pill.pill-visible {
+  animation: pillPop 0.45s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+/* Image container subtle scale on hover */
+.image-container {
+  overflow: hidden;
+}
+
+.image-container img {
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+
+.image-container:hover img {
+  transform: scale(1.04);
+}
+
+/* Feature card refined hover */
+.feature-card {
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.35s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+}
+
+/* Repair hero image subtle zoom */
+.repair-hero {
+  transition: transform 0.6s ease;
+}
+.repair-hero:hover {
+  transform: scale(1.01);
 }
 
 /* ─── Utilities ─── */
