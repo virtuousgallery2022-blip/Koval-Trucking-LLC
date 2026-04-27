@@ -14,25 +14,151 @@
       text-align: center;
       border-bottom: 1px solid var(--border-color);
     }
-
     .page-header h1 {
       font-size: 4rem;
       letter-spacing: -2px;
       margin-bottom: 1rem;
     }
 
+    /* Hero image */
     .repair-hero {
       width: 100%;
-      height: 500px;
+      height: 520px;
       object-fit: cover;
+      object-position: center 30%;
       border-radius: 18px;
       margin-bottom: 3rem;
       border: 1px solid var(--border-color);
+      transition: transform 0.6s ease;
+      display: block;
+    }
+    .repair-hero:hover { transform: scale(1.01); }
+
+    /* Gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 240px 240px;
+      gap: 1rem;
+      margin: 3rem 0 0;
+    }
+
+    .gallery-grid .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem 1.2rem;
+    }
+
+    .gallery-item:hover .overlay { opacity: 1; }
+
+    .gallery-item .overlay span {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: lbFadeIn 0.25s ease;
+    }
+    .lightbox.open { display: flex; }
+
+    @keyframes lbFadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+      animation: lbScale 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    @keyframes lbScale {
+      from { transform: scale(0.9); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem; right: 1.5rem;
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      z-index: 10000;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-grid .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      .gallery-item img { min-height: 220px; }
+      .gallery-item:first-child img { min-height: 280px; }
+      .repair-hero { height: 280px; }
+      .page-header { padding: 7rem 5% 3rem; }
+      .page-header h1 { font-size: 2.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gallery-grid .gallery-item:first-child { grid-column: span 1; }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Shop photo">
+  </div>
 
   <!-- Navigation -->
   <nav>
@@ -54,8 +180,13 @@
   </header>
 
   <section class="fade-in">
-    <img src="images/repair_shop.png" alt="Modern Truck Repair Shop" class="repair-hero fade-in">
 
+    <!-- Hero: wide shop overview -->
+    <img src="images/IMG-20260416-WA0035.jpg"
+         alt="Koval Trucking Repair Bay — truck being serviced"
+         class="repair-hero">
+
+    <!-- Info + services -->
     <div class="grid grid-2 mt-4">
       <div>
         <h2 class="section-title" style="text-align: left; font-size: 2.5rem;">Expert Maintenance & Repair</h2>
@@ -77,6 +208,30 @@
         </ul>
       </div>
     </div>
+
+    <!-- Photo gallery -->
+    <div class="gallery-grid fade-in">
+
+      <!-- Tall left: engine open close-up -->
+      <div class="gallery-item" data-src="images/IMG-20260416-WA0031.jpg">
+        <img src="images/IMG-20260416-WA0031.jpg" alt="Engine open — diagnostics in progress">
+        <div class="overlay"><span>Engine Diagnostics</span></div>
+      </div>
+
+      <!-- Top right: side view of yellow truck in bay -->
+      <div class="gallery-item" data-src="images/IMG-20260416-WA0033.jpg">
+        <img src="images/IMG-20260416-WA0033.jpg" alt="Truck in repair bay">
+        <div class="overlay"><span>Full-Bay Service</span></div>
+      </div>
+
+      <!-- Bottom right: rear/underside inspection -->
+      <div class="gallery-item" data-src="images/IMG-20260416-WA0027.jpg">
+        <img src="images/IMG-20260416-WA0027.jpg" alt="Rear truck inspection">
+        <div class="overlay"><span>Trailer & Suspension Checks</span></div>
+      </div>
+
+    </div>
+
   </section>
 
   <section class="fade-in text-center mb-4">
@@ -122,6 +277,30 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lightbox-img');
+    const lbClose  = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lbImg.src = item.dataset.src;
+        lbImg.alt = item.querySelector('img').alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
 
 </html>
