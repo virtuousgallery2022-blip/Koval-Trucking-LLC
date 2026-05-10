@@ -2,11 +2,13 @@
   // Splash Screen Logic
   const splashVideo = document.getElementById('splash-video');
   const videoSplash = document.getElementById('video-splash');
+  const splashSeenKey = 'kovalTruckingSplashSeenThisSession';
 
   if (splashVideo && videoSplash) {
     const hideSplash = () => {
       videoSplash.classList.add('fade-out');
       document.body.classList.remove('no-scroll');
+      sessionStorage.setItem(splashSeenKey, 'true');
 
       // Remove element from DOM after transition finishes
       setTimeout(() => {
@@ -14,13 +16,18 @@
       }, 250);
     };
 
-    splashVideo.addEventListener('ended', hideSplash);
-    splashVideo.addEventListener('error', hideSplash);
-    splashVideo.addEventListener('timeupdate', () => {
-      if (splashVideo.duration && splashVideo.currentTime >= splashVideo.duration - 0.45) {
-        hideSplash();
-      }
-    });
+    if (sessionStorage.getItem(splashSeenKey) === 'true') {
+      videoSplash.remove();
+      document.body.classList.remove('no-scroll');
+    } else {
+      splashVideo.addEventListener('ended', hideSplash);
+      splashVideo.addEventListener('error', hideSplash);
+      splashVideo.addEventListener('timeupdate', () => {
+        if (splashVideo.duration && splashVideo.currentTime >= splashVideo.duration - 0.45) {
+          hideSplash();
+        }
+      });
+    }
   }
 
   /* Mobile Menu Toggle */
