@@ -4,17 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Koval Trucking - Dependable Conestoga Flatbed Shipping</title>
+  <title>Koval Trucking - West Coast Flatbed & Conestoga Specialists</title>
   <meta name="description"
-    content="Koval Trucking: Dependable Conestoga flatbed shipping you can count on. No tarps, no delays. Reliable flatbed hauling across the Western US.">
+    content="Koval Trucking provides West Coast flatbed and Conestoga shipping backed by HD Fleet Service support, direct communication, and dependable delivery.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="no-scroll">
+  <div id="video-splash">
+    <video autoplay muted playsinline id="splash-video">
+      <source src="vid/desert_truck_zoommp_ - Trim.mp4" type="video/mp4">
+    </video>
+    <img src="images/logo.png" alt="Koval Trucking Logo" class="splash-logo">
+  </div>
 
-  <!-- Navigation -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-contact">
+        <span><strong>Call:</strong> <a href="tel:+13608312366">(360) 831-2366</a></span>
+        <span><strong>Email:</strong> <a href="mailto:mktrucking70@gmail.com">mktrucking70@gmail.com</a></span>
+      </div>
+      <div class="topbar-hours">
+        <span>Mon - Sat: 8AM - 6PM</span>
+        <span>West Coast Freight & HD Fleet Support</span>
+      </div>
+    </div>
+  </div>
+
   <nav>
-    <a href="index.html" class="logo"><img src="images/logo.png" alt="Koval Trucking Logo" style="height: 38px;"></a>
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Koval Trucking Logo"></a>
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
@@ -26,149 +44,242 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="fade-in" style="padding: 10rem 5% 6rem; max-width: 1300px; margin: 0 auto; text-align: center;">
-    <div>
-      <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; letter-spacing: -2px;">We
-        turn freight potential into real performance.</h1>
-      <p
-        style="font-size: 1.25rem; color: var(--gray); margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        No tarps. No delays. Just fast, protected Conestoga flatbed freight delivered the right way, every single time.
-      </p>
-      <div style="display: flex; gap: 1rem; align-items: center; justify-content: center; margin-bottom: 4rem;">
-        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
-        <a href="services.html" class="btn btn-secondary">Our Services</a>
-      </div>
-      <div class="image-container"
-        style="min-height: auto; height: auto; max-height: none; opacity: 0.8; border-radius: 16px; overflow: hidden;">
-        <img src="images/volvo_truck.jpg" alt="Volvo Truck Side Profile"
-          style="width: 100%; height: auto; display: block;">
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section class="fade-in"
-    style="padding: 6rem 5%; background: rgba(0,0,0,0.01); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-    <div class="split-layout reverse" style="max-width: 1300px; margin: 0 auto;">
-      <div style="text-align: left; max-width: 600px;">
-        <h2 style="font-size: 3rem; margin-bottom: 1.5rem; letter-spacing: -1px; font-weight: 700;">Doing things the
-          <br>right way. Since 2005.
-        </h2>
-        <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 2rem;">At Koval Trucking, we’re a family-run
-          company. We believe in showing up on time, communicating clearly, and delivering your load safely. When you
-          work with us, you’re not dealing with a broker — you get direct carrier access.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-          <div>
-            <h3 style="font-size: 2.5rem; margin-bottom: 0.5rem;" data-target="2005">2005</h3>
-            <p style="color: var(--gray); font-size: 0.9rem;">Founded</p>
-          </div>
-          <div>
-            <h3 style="font-size: 2.5rem; margin-bottom: 0.5rem;" data-target="100" data-suffix="%">100%</h3>
-            <p style="color: var(--gray); font-size: 0.9rem;">Direct Access</p>
+  <section class="hero-home fade-in">
+    <div class="hero-shell">
+      <div class="hero-panel">
+        <img src="images/volvo_truck.jpg" alt="Koval Trucking flatbed truck on the road">
+        <div class="hero-copy">
+          <span class="eyebrow">Moving The West With Confidence</span>
+          <h1>West Coast flatbed and Conestoga freight, done the right way.</h1>
+          <p>Koval Trucking combines specialized freight lanes, direct carrier communication, and in-house HD Fleet support to keep your shipment protected, compliant, and on schedule.</p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+            <a href="services.html" class="btn btn-secondary">Explore Services</a>
           </div>
         </div>
       </div>
-      <div class="image-container" style="min-height: 500px;">
-        <img src="images/helicopter.jpg" alt="Helicopter loaded on Conestoga flatbed">
+
+      <div class="quote-card">
+        <div>
+          <span class="section-tag" style="background: rgba(255,255,255,0.14); color: #fff;">Request A Free Quote</span>
+          <h2>Tell us about your load.</h2>
+          <p>Need dependable coverage for a flatbed or Conestoga shipment? Send the basics and our team will follow up quickly.</p>
+        </div>
+        <form name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="quote-request">
+          <input type="hidden" name="source" value="homepage-quote">
+          <p style="display: none;">
+            <label>Do not fill this out if you're human: <input name="bot-field"></label>
+          </p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="quote-name">Name</label>
+              <input type="text" id="quote-name" name="quote-name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="quote-company">Company</label>
+              <input type="text" id="quote-company" name="quote-company" placeholder="Company name">
+            </div>
+            <div class="form-group">
+              <label for="quote-email">Email</label>
+              <input type="email" id="quote-email" name="quote-email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="quote-phone">Phone</label>
+              <input type="tel" id="quote-phone" name="quote-phone" placeholder="Best callback number" required>
+            </div>
+            <div class="form-group">
+              <label for="quote-origin">Pickup</label>
+              <input type="text" id="quote-origin" name="quote-origin" placeholder="City, State" required>
+            </div>
+            <div class="form-group">
+              <label for="quote-destination">Delivery</label>
+              <input type="text" id="quote-destination" name="quote-destination" placeholder="City, State" required>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 1rem;">
+            <label for="quote-details">Freight Details</label>
+            <textarea id="quote-details" name="quote-details" rows="4" placeholder="Freight type, trailer needs, timing, dimensions" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Request</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="stats-row fade-in">
+      <div class="stat-card">
+        <h3 data-target="21" data-suffix="+">21+</h3>
+        <p>Years serving specialized freight customers.</p>
+      </div>
+      <div class="stat-card">
+        <h3 data-target="100" data-suffix="%">100%</h3>
+        <p>Direct carrier access with no broker handoff.</p>
+      </div>
+      <div class="stat-card">
+        <h3>West Coast</h3>
+        <p>Focused regional lanes for better route control.</p>
+      </div>
+      <div class="stat-card">
+        <h3>HD Fleet</h3>
+        <p>In-house maintenance support to reduce downtime.</p>
       </div>
     </div>
   </section>
 
-  <!-- What We Do -->
-  <section class="fade-in mt-4">
-    <h2 class="section-title">What We Do</h2>
-    <div class="grid grid-2">
-      <div class="feature-card">
-        <h3>🚛 Conestoga Flatbed Shipping</h3>
-        <p>If you're tired of delays and damaged loads, our Conestoga trailers are the solution.</p>
-        <ul style="margin-top: 1rem; color: var(--gray); padding-left: 1.5rem;">
-          <li>No tarping needed</li>
-          <li>Faster loading and unloading</li>
-          <li>Full protection from rain, wind, and debris</li>
-          <li>Safe handling for your freight</li>
-        </ul>
+  <section class="fade-in text-left">
+    <span class="section-tag">Why Koval</span>
+    <h2 class="section-title">Built like a carrier, supported like a fleet partner.</h2>
+    <p class="section-subtitle">Skyline's site leans on trust signals, service clarity, and a quote-first structure. We carried that same direction here while keeping Koval's identity centered on Conestoga, flatbed, and heavy-duty fleet support.</p>
+    <div class="service-pillars">
+      <div class="service-pillar">
+        <div class="feature-icon">01</div>
+        <h3>Specialized Freight Focus</h3>
+        <p>We stay focused on flatbed and Conestoga loads across the West Coast, giving customers sharper lane knowledge and better execution.</p>
       </div>
-      <div class="feature-card">
-        <h3>📦 Dedicated Shipping</h3>
-        <p>Need consistent routes or regular shipments? We've got you covered with reliable schedules and dedicated
-          lanes.</p>
-        <ul style="margin-top: 1rem; color: var(--gray); padding-left: 1.5rem;">
-          <li>Reliable schedules</li>
-          <li>Dedicated lanes</li>
-          <li>Easy communication</li>
-        </ul>
+      <div class="service-pillar">
+        <div class="feature-icon">02</div>
+        <h3>HD Fleet Service Advantage</h3>
+        <p>Our in-house shop helps keep equipment road-ready, reduces avoidable downtime, and supports better schedule reliability.</p>
+      </div>
+      <div class="service-pillar">
+        <div class="feature-icon">03</div>
+        <h3>Direct Communication</h3>
+        <p>You work with the carrier directly for clearer updates, faster decisions, and a more accountable shipping experience.</p>
       </div>
     </div>
   </section>
 
-  <!-- Areas of Operation -->
-  <section class="fade-in mt-4">
-    <h2 class="section-title">Where We Operate</h2>
-    <p class="section-subtitle">We run throughout the Western United States</p>
-    <div class="state-pills">
-      <span class="pill">Oregon</span>
-      <span class="pill">Washington</span>
-      <span class="pill">California</span>
-      <span class="pill">Nevada</span>
-      <span class="pill">Arizona</span>
-      <span class="pill">New Mexico</span>
-      <span class="pill">Idaho</span>
-      <span class="pill">Utah</span>
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section class="fade-in mt-4">
-    <h2 class="section-title">Why Customers Choose Us</h2>
-    <div class="grid grid-3">
-      <div class="feature-card text-center">
-        <h3>No Tarps</h3>
-        <p>No waiting around for tarps, meaning faster turnaround times.</p>
+  <section class="fade-in">
+    <div class="showcase-grid">
+      <div class="image-container showcase-card tall">
+        <img src="images/IMG-20260416-WA0031.jpg" alt="Truck in the Koval HD Fleet service bay">
       </div>
-      <div class="feature-card text-center">
-        <h3>Protected Freight</h3>
-        <p>Your freight stays fully protected against all weather elements.</p>
-      </div>
-      <div class="feature-card text-center">
-        <h3>Direct Access</h3>
-        <p>You deal directly with us — no brokers, just honest communication.</p>
+      <div class="showcase-stack">
+        <div class="image-container showcase-card">
+          <img src="images/IMG-20260416-WA0033.jpg" alt="Yellow truck being serviced in the repair shop">
+        </div>
+        <div class="feature-card">
+          <span class="section-tag">In The Shop</span>
+          <h3>Maintenance support that keeps freight moving.</h3>
+          <p>Our HD Fleet team works on the same equipment we rely on every day, which helps us maintain tighter standards and respond faster when trucks need service.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer CTA -->
-  <section class="fade-in text-center mt-4">
-    <h2>Need a carrier you can rely on?</h2>
-    <p style="color: var(--gray); margin: 1rem 0 2rem;">Reach out today for a quick quote — we’ll get back to you fast.
-    </p>
-    <a href="contact.html" class="btn btn-primary">Get a Free Quote Fast</a>
+  <section class="fade-in">
+    <div class="split-layout">
+      <div class="image-container">
+        <img src="images/helicopter.jpg" alt="Specialized freight secured in a Conestoga trailer">
+      </div>
+      <div>
+        <span class="section-tag">What We Handle</span>
+        <h2 class="section-title">Protection of a covered trailer. Access of a flatbed.</h2>
+        <p style="color: var(--gray); margin-bottom: 1.5rem;">Koval Trucking moves freight that cannot afford weather exposure, load delay, or unnecessary handling. Our Conestoga setups help customers move faster while keeping cargo protected from the elements.</p>
+        <div class="grid">
+          <div class="info-card">
+            <h3>Conestoga Freight</h3>
+            <p>Ideal for weather-sensitive materials that still need side-loading flexibility and faster turnaround.</p>
+          </div>
+          <div class="info-card">
+            <h3>Dedicated Flatbed Lanes</h3>
+            <p>Consistent scheduling, regional experience, and dependable communication for repeat freight needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <div class="highlight-band">
+      <span class="section-tag" style="background: rgba(255,255,255,0.14); color: #fff;">Coverage</span>
+      <h2 class="section-title" style="color: #fff;">Focused lanes across the Western United States.</h2>
+      <p style="max-width: 820px; margin-bottom: 1.5rem;">We adapt to traffic, timing, and route changes in real time to keep freight moving efficiently throughout our active service area.</p>
+      <div class="state-pills">
+        <span class="pill">Oregon</span>
+        <span class="pill">Washington</span>
+        <span class="pill">California</span>
+        <span class="pill">Nevada</span>
+        <span class="pill">Arizona</span>
+        <span class="pill">New Mexico</span>
+        <span class="pill">Idaho</span>
+        <span class="pill">Utah</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <div class="text-center">
+      <span class="section-tag">Certifications & Standards</span>
+      <h2 class="section-title">Professional service backed by high operating standards.</h2>
+      <p class="section-subtitle">The Skyline reference emphasizes trust markers up front. For Koval, that translates into service discipline, fleet readiness, and dependable communication from dispatch to delivery.</p>
+    </div>
+    <div class="certifications">
+      <div class="cert-card">
+        <strong>Direct Carrier Communication</strong>
+        <p>No broker layers, no confusion, and faster problem solving.</p>
+      </div>
+      <div class="cert-card">
+        <strong>Freight Protection</strong>
+        <p>Conestoga equipment supports cleaner loading and better weather coverage.</p>
+      </div>
+      <div class="cert-card">
+        <strong>Fleet Readiness</strong>
+        <p>HD Fleet Service support helps maintain road-safe equipment and schedules.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <div class="text-center">
+      <span class="section-tag">Testimonials</span>
+      <h2 class="section-title">What partners value about working with us.</h2>
+      <p class="section-subtitle">Clear updates, reliable timing, and equipment that stays ready for the next move.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>They communicate directly, keep us informed, and treat our loads with the same urgency we do.</p>
+        <strong>Regional Shipping Partner</strong>
+        <span>West Coast Customer</span>
+      </div>
+      <div class="testimonial-card">
+        <p>Koval understands specialized freight and keeps things moving without the usual back-and-forth delays.</p>
+        <strong>Dedicated Lane Client</strong>
+        <span>Flatbed Customer</span>
+      </div>
+      <div class="testimonial-card">
+        <p>Their in-house fleet support shows up in the reliability. That matters when timelines are tight.</p>
+        <strong>Owner-Operator Partner</strong>
+        <span>Regional Haul Network</span>
+      </div>
+    </div>
   </section>
 
   <footer class="creative-footer">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-block;">
-          <img src="images/logo.png" alt="Koval Trucking Logo" style="height: 48px;">
+        <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+          <img src="images/logo.png" alt="Koval Trucking Logo">
         </a>
-        <p style="font-size: 0.9rem;">Dependable Conestoga flatbed shipping you can count on. No tarps, no delays.</p>
+        <p>We are a family-owned transportation company specializing in West Coast flatbed and Conestoga freight, supported by HD Fleet Service and direct carrier communication.</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="repair.html">Truck Repair</a></li>
           <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="contact.html">Get a Quote</a></li>
-          <li><a href="mailto:quotes@kovaltrucking.com">quotes@kovaltrucking.com</a></li>
-          <li><a href="tel:+15555555555">(360) 831-2366</a></li>
+          <li><a href="tel:+13608312366">(360) 831-2366</a></li>
+          <li><a href="mailto:mktrucking70@gmail.com">mktrucking70@gmail.com</a></li>
+          <li>Mon - Sat: 8AM - 6PM</li>
+          <li>West Coast Specialized Freight</li>
         </ul>
       </div>
     </div>

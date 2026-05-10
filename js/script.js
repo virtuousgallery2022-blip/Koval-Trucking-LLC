@@ -1,6 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
+  // Splash Screen Logic
+  const splashVideo = document.getElementById('splash-video');
+  const videoSplash = document.getElementById('video-splash');
 
-  /* ── Mobile Menu Toggle ── */
+  if (splashVideo && videoSplash) {
+    const hideSplash = () => {
+      videoSplash.classList.add('fade-out');
+      document.body.classList.remove('no-scroll');
+
+      // Remove element from DOM after transition finishes
+      setTimeout(() => {
+        videoSplash.remove();
+      }, 250);
+    };
+
+    splashVideo.addEventListener('ended', hideSplash);
+    splashVideo.addEventListener('error', hideSplash);
+    splashVideo.addEventListener('timeupdate', () => {
+      if (splashVideo.duration && splashVideo.currentTime >= splashVideo.duration - 0.45) {
+        hideSplash();
+      }
+    });
+  }
+
+  /* Mobile Menu Toggle */
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks   = document.getElementById('nav-links');
 
@@ -11,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Scroll-based Fade / Slide Animations ── */
+  /* Scroll-based Fade / Slide Animations */
   const observerOptions = { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.08 };
 
   const observer = new IntersectionObserver((entries, obs) => {
@@ -25,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  /* ── Staggered card children animation ── */
+  /* Staggered card children animation */
   const cardObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -45,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cardObserver.observe(grid);
   });
 
-  /* ── Nav: shrink + shadow on scroll ── */
+  /* Nav: shrink + shadow on scroll */
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -55,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  /* ── Stat counters (numbers on homepage) ── */
+  /* Stat counters (numbers on homepage) */
   function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);
     if (!target) return;
@@ -80,13 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
-  /* ── Smooth hover lift on buttons ── */
+  /* Smooth hover lift on buttons */
   document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mouseenter', () => btn.style.transform = 'translateY(-2px)');
     btn.addEventListener('mouseleave', () => btn.style.transform = 'translateY(0)');
   });
 
-  /* ── State pills: staggered pop-in ── */
+  /* State pills: staggered pop-in */
   const pillContainer = document.querySelector('.state-pills');
   if (pillContainer) {
     const pillObs = new IntersectionObserver((entries, obs) => {
@@ -101,5 +124,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
     pillObs.observe(pillContainer);
   }
-
 });
