@@ -97,7 +97,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
 }
 
 #video-splash.fade-out {
@@ -845,6 +845,11 @@ section {
 }
 
 @media (max-width: 1024px) {
+  .hero-home {
+    width: calc(100% - 8%);
+    padding-top: 2.5rem;
+  }
+
   .hero-shell,
   .split-layout,
   .grid-3,
@@ -856,6 +861,20 @@ section {
   .showcase-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hero-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-card {
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .stats-row {
+    margin-top: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -865,6 +884,10 @@ section {
 
   nav {
     padding: 0.9rem 5%;
+  }
+
+  .logo img {
+    height: 32px;
   }
 
   .nav-links {
@@ -896,7 +919,7 @@ section {
   }
 
   section {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
   }
 
   .hero-shell,
@@ -919,12 +942,23 @@ section {
   }
 
   .hero-panel {
-    min-height: 540px;
-    padding: 1.5rem;
+    min-height: 460px;
+    padding: 1.35rem;
+    border-radius: 24px;
   }
 
   .hero-copy h1 {
-    font-size: 2.85rem;
+    font-size: 2.35rem;
+    line-height: 1;
+  }
+
+  .hero-copy p,
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
   }
 
   .btn {
@@ -957,5 +991,94 @@ section {
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.85rem 4%;
+  }
+
+  section,
+  header,
+  .hero-home {
+    width: calc(100% - 8%);
+  }
+
+  .hero-home {
+    padding-top: 1.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-panel {
+    min-height: 390px;
+    padding: 1.1rem;
+    border-radius: 20px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2rem;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 1rem;
+  }
+
+  .eyebrow::before {
+    width: 24px;
+  }
+
+  .quote-card h2,
+  .section-title,
+  .page-header h1 {
+    font-size: 1.85rem;
+  }
+
+  .quote-card,
+  .feature-card,
+  .info-card,
+  .testimonial-card,
+  .service-pillar,
+  .stat-card,
+  .highlight-band,
+  .cert-card {
+    padding: 1.2rem;
+    border-radius: 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-tag {
+    font-size: 0.72rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .image-container {
+    min-height: 220px;
+    border-radius: 20px;
+  }
+
+  .showcase-card,
+  .showcase-card.tall,
+  .gallery-card {
+    min-height: 220px;
+  }
+
+  .splash-logo {
+    top: 1rem;
+    right: 4%;
+    height: 44px;
+    padding: 0.35rem 0.75rem;
   }
 }

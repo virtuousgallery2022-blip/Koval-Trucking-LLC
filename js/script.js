@@ -13,7 +13,7 @@
       // Remove element from DOM after transition finishes
       setTimeout(() => {
         videoSplash.remove();
-      }, 250);
+      }, 180);
     };
 
     if (sessionStorage.getItem(splashSeenKey) === 'true') {
@@ -23,7 +23,7 @@
       splashVideo.addEventListener('ended', hideSplash);
       splashVideo.addEventListener('error', hideSplash);
       splashVideo.addEventListener('timeupdate', () => {
-        if (splashVideo.duration && splashVideo.currentTime >= splashVideo.duration - 0.45) {
+        if (splashVideo.duration && splashVideo.currentTime >= splashVideo.duration - 0.7) {
           hideSplash();
         }
       });
