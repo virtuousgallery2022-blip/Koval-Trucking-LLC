@@ -41,10 +41,6 @@ body {
   overflow-x: hidden;
 }
 
-body.no-scroll {
-  overflow: hidden;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -86,55 +82,6 @@ img {
 
 .topbar strong {
   color: #fff;
-}
-
-/* Splash Screen */
-#video-splash {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background-color: #081829;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.18s ease, visibility 0.18s ease;
-}
-
-#video-splash.fade-out {
-  opacity: 0;
-  visibility: hidden;
-}
-
-#splash-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.splash-logo {
-  position: absolute;
-  top: 2rem;
-  right: 5%;
-  height: 60px;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.96);
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 nav {
