@@ -318,6 +318,10 @@ section {
   gap: 1rem;
 }
 
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
 .form-group {
   display: grid;
   gap: 0.45rem;
@@ -622,6 +626,38 @@ section {
   color: var(--heading-color);
 }
 
+.testimonial-submit {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(219, 233, 248, 0.8));
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.testimonial-submit h3 {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  line-height: 1;
+  color: var(--heading-color);
+  margin-bottom: 0.75rem;
+}
+
+.testimonial-submit p {
+  color: var(--gray);
+}
+
+.testimonial-form-panel {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
 .state-pills {
   display: flex;
   flex-wrap: wrap;
@@ -802,6 +838,7 @@ section {
   .grid-3,
   .service-pillars,
   .testimonial-grid,
+  .testimonial-submit,
   .stats-row,
   .footer-grid,
   .certifications,
@@ -876,6 +913,7 @@ section {
   .form-grid,
   .service-pillars,
   .testimonial-grid,
+  .testimonial-submit,
   .stats-row,
   .footer-grid,
   .gallery-grid,
@@ -916,6 +954,7 @@ section {
   .feature-card,
   .info-card,
   .testimonial-card,
+  .testimonial-submit,
   .service-pillar,
   .stat-card {
     padding: 1.5rem;
@@ -991,6 +1030,7 @@ section {
   .feature-card,
   .info-card,
   .testimonial-card,
+  .testimonial-submit,
   .service-pillar,
   .stat-card,
   .highlight-band,
@@ -1022,10 +1062,4 @@ section {
     min-height: 220px;
   }
 
-  .splash-logo {
-    top: 1rem;
-    right: 4%;
-    height: 44px;
-    padding: 0.35rem 0.75rem;
-  }
 }

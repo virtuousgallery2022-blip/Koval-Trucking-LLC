@@ -33,6 +33,8 @@
       "telephone": "+1-360-831-2366"
     }
   </script>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -273,6 +275,62 @@
         <span>Regional Haul Network</span>
       </div>
     </div>
+
+    <div class="testimonial-submit" id="submit-testimonial">
+      <div>
+        <span class="section-tag">Submit Feedback</span>
+        <h3>Please provide your Valuable Feedback for Koval Trucking LLC.</h3>
+      </div>
+      <form name="testimonial-submission" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="testimonial-form-panel">
+        <input type="hidden" name="form-name" value="testimonial-submission">
+        <input type="hidden" name="source" value="homepage-testimonial">
+        <p style="display: none;">
+          <label>Do not fill this out if you're human: <input name="bot-field"></label>
+        </p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="testimonial-name">Name</label>
+            <input type="text" id="testimonial-name" name="testimonial-name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="testimonial-company">Company</label>
+            <input type="text" id="testimonial-company" name="testimonial-company" placeholder="Company name">
+          </div>
+          <div class="form-group">
+            <label for="testimonial-email">Email</label>
+            <input type="email" id="testimonial-email" name="testimonial-email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="testimonial-role">Relationship</label>
+            <select id="testimonial-role" name="testimonial-role" required>
+              <option value="">Select one</option>
+              <option value="Customer">Customer</option>
+              <option value="Broker">Broker</option>
+              <option value="Owner-Operator Partner">Owner-Operator Partner</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="testimonial-rating">Rating</label>
+            <select id="testimonial-rating" name="testimonial-rating">
+              <option value="">Optional</option>
+              <option value="5 Stars">5 Stars</option>
+              <option value="4 Stars">4 Stars</option>
+              <option value="3 Stars">3 Stars</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="testimonial-location">Location</label>
+            <input type="text" id="testimonial-location" name="testimonial-location" placeholder="City, State">
+          </div>
+          <div class="form-group full">
+            <label for="testimonial-message">Testimonial</label>
+            <textarea id="testimonial-message" name="testimonial-message" rows="5" placeholder="Share your experience working with Koval Trucking" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+      </form>
+    </div>
   </section>
 
   <footer class="creative-footer">
@@ -291,6 +349,7 @@
           <li><a href="repair.html">Truck Repair</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="#submit-testimonial">Submit Testimonial</a></li>
         </ul>
       </div>
       <div class="footer-col">
