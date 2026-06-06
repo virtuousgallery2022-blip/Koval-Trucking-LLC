@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Netlify Form Detection</title>
+</head>
+
+<body>
+  <!--
+    This page is intentionally not linked in the website.
+    Netlify scans static HTML at deploy time, so these minimal forms help
+    Netlify detect every production form reliably.
+  -->
+
+  <form name="quote-request" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="quote-request">
+    <input name="bot-field">
+    <input name="quote-name">
+    <input name="quote-company">
+    <input name="quote-email">
+    <input name="quote-phone">
+    <input name="quote-origin">
+    <input name="quote-destination">
+    <textarea name="quote-details"></textarea>
+    <input name="source">
+  </form>
+
+  <form name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact">
+    <input name="bot-field">
+    <input name="name">
+    <input name="company">
+    <input name="phone">
+    <input name="email">
+    <input name="pickup">
+    <input name="delivery">
+    <textarea name="details"></textarea>
+    <input name="source">
+  </form>
+
+  <form name="careers" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="careers">
+    <input name="bot-field">
+    <input name="name">
+    <input name="position">
+    <input name="experience">
+    <input name="equipment">
+    <input name="phone">
+    <input name="email">
+    <textarea name="details"></textarea>
+    <input name="source">
+  </form>
+
+  <form name="testimonial-submission" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="testimonial-submission">
+    <input name="bot-field">
+    <input name="testimonial-name">
+    <input name="testimonial-company">
+    <input name="testimonial-email">
+    <input name="testimonial-role">
+    <input name="testimonial-rating">
+    <input name="testimonial-location">
+    <textarea name="testimonial-message"></textarea>
+    <input name="source">
+  </form>
+</body>
+
+</html>
