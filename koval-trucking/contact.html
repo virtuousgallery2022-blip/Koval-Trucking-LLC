@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Koval Trucking LLC | Request a Freight Quote</title>
+  <meta name="description" content="Request a freight quote from Koval Trucking for West Coast flatbed and Conestoga shipping.">
+  <link rel="canonical" href="https://www.kovaltrucking.com/contact.html">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-contact">
+        <span><strong>Koval Trucking Dispatch:</strong> <a href="tel:+13608312366">(360) 831-2366</a></span>
+        <span><strong>Email:</strong> <a href="mailto:dispatch@kovaltrucking.com">dispatch@kovaltrucking.com</a></span>
+        <span><strong>HD Fleet Services:</strong> <a href="tel:+13606017512">(360) 601-7512</a></span>
+      </div>
+      <div class="topbar-hours">
+        <span>Quote Requests Welcome</span>
+        <span>Mon - Sat: 8AM - 6PM</span>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Koval Trucking Logo"></a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="repair.html">Truck Repair</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header fade-in">
+    <span class="section-tag">Get A Quote</span>
+    <h1>Let’s talk about your next load.</h1>
+    <p class="section-subtitle">Share your shipment details and our team will follow up with a quote for West Coast flatbed or Conestoga coverage.</p>
+  </header>
+
+  <section class="fade-in">
+    <div class="feature-card" style="max-width: 860px; margin: 0 auto;">
+        <h3>Request Your Quote</h3>
+        <p style="margin-bottom: 1.5rem;">Tell us where the freight is going, what equipment is needed, and any scheduling details we should know.</p>
+        <form name="contact" method="POST" action="https://kovaltrucking.netlify.app/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="source" value="contact-page">
+          <p style="display: none;">
+            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+          </p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="pickup">Pickup Location</label>
+              <input type="text" id="pickup" name="pickup" placeholder="City, State" required>
+            </div>
+            <div class="form-group">
+              <label for="delivery">Delivery Location</label>
+              <input type="text" id="delivery" name="delivery" placeholder="City, State" required>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 1rem;">
+            <label for="details">Freight Details</label>
+            <textarea id="details" name="details" rows="5" placeholder="Freight type, equipment needs, weight, timing, special handling" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Quote Request</button>
+        </form>
+    </div>
+  </section>
+
+  <footer class="creative-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+          <img src="images/logo.png" alt="Koval Trucking Logo">
+        </a>
+        <p>Specialized flatbed and Conestoga freight service across the West Coast.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="repair.html">Truck Repair</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+13608312366">(360) 831-2366</a></li>
+          <li><a href="mailto:dispatch@kovaltrucking.com">dispatch@kovaltrucking.com</a></li>
+          <li>HD Fleet Services: <a href="tel:+13606017512">(360) 601-7512</a></li>
+          <li>Mon - Sat: 8AM - 6PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Koval Trucking LLC. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
