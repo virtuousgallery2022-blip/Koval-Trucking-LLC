@@ -80,6 +80,14 @@ img {
   flex-wrap: wrap;
 }
 
+.topbar-contact {
+  flex: 1 1 auto;
+}
+
+.topbar-contact span {
+  white-space: nowrap;
+}
+
 .topbar strong {
   color: #fff;
 }
@@ -533,6 +541,27 @@ section {
   transform: scale(1.04);
 }
 
+.about-story-copy {
+  align-self: center;
+}
+
+.about-story-copy .section-title {
+  font-size: clamp(3rem, 4.2vw, 4.75rem);
+  line-height: 0.93;
+  margin-bottom: 1.4rem;
+}
+
+.about-story-copy p {
+  color: var(--gray);
+  font-size: clamp(1.12rem, 1.35vw, 1.32rem);
+  line-height: 1.72;
+  margin-bottom: 1.4rem;
+}
+
+.about-story-image {
+  min-height: 520px;
+}
+
 .highlight-band {
   background: linear-gradient(135deg, #08213f, #0a4a8f);
   border-radius: 30px;
@@ -863,6 +892,22 @@ section {
 
 @media (max-width: 768px) {
   .topbar {
+    display: block;
+    padding: 0.55rem 4%;
+    font-size: 0.78rem;
+  }
+
+  .topbar-inner,
+  .topbar-contact {
+    justify-content: center;
+    gap: 0.35rem 0.75rem;
+  }
+
+  .topbar-contact span {
+    white-space: normal;
+  }
+
+  .topbar-hours {
     display: none;
   }
 
@@ -962,6 +1007,18 @@ section {
 
   .image-container {
     min-height: 280px;
+  }
+
+  .about-story-copy .section-title {
+    font-size: 2.45rem;
+  }
+
+  .about-story-copy p {
+    font-size: 1.04rem;
+  }
+
+  .about-story-image {
+    min-height: 300px;
   }
 
   .showcase-card,
